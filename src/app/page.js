@@ -17,6 +17,7 @@ export default function Home() {
          </div>
         </a>
       </div>
+      <p className='text-sm'>Sitio en construcción ⚠️</p>
     </div>
     </>
   )
