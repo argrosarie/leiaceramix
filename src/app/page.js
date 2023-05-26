@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <div className="grid place-content-center min-h-screen bg-gradient-to-br from-stone-100 via-stone-300 to-stone-400 space-y-8">
         <section className="flex flex-col items-center justify-center w-full space-y-2">
-          <p className="uppercase text-3xl text-white font-bold text-center">
+          <p className="uppercase text-3xl text-gray-500 font-bold text-center">
             Hi! <br />
             It&apos;s Leia Ceramix
           </p>
