@@ -33,7 +33,7 @@ const Navbar = () => {
           currentPage === item.path
             ? 'bg-slate-500 text-white hover:text-white'
             : ''
-        } bg-slate-400/10 my-1 rounded-md p-1 bg-gray-200 md:px-2`}
+        }  my-1 rounded-md p-1 bg-gray-200 md:px-2`}
       >
         {item.label}
       </button>
@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <nav
       className={`bg-base-100 fixed z-10 w-full ${
-        isOpen ? 'bg-transparent/50' : 'bg-transparent'
+        isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
       }`}
     >
       <div className="flex items-center justify-between px-4 py-3 md:pl-10 lg:pl-20">
