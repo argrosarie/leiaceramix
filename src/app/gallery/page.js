@@ -1,93 +1,32 @@
 import Image from 'next/image'
+import AroLagrima from '../../../public/assets/images/aro-lagrima.jpeg'
+import AroLapices from '../../../public/assets/images/aro-lapices.jpeg'
+import AroCorazones from '../../../public/assets/images/aro-corazones.jpeg'
+import AroFantasmas from '../../../public/assets/images/aro-fantasmas.jpeg'
+import AroGay from '../../../public/assets/images/aro-gay.jpeg'
+import Taza from '../../../public/assets/images/taza.jpeg'
 
 export default function Gallery() {
+  const images = [
+    { src: AroLagrima, alt: 'Aros lágrima' },
+    { src: AroLapices, alt: 'Aros lápiz' },
+    { src: AroCorazones, alt: 'Aros corazón' },
+    { src: AroFantasmas, alt: 'Aros Fantasma' },
+    { src: AroGay, alt: 'Aro Orgullo' },
+    { src: Taza, alt: 'Taza' },
+  ]
   return (
-    <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg"
-            alt=""
-          />
-        </div>
+    <div className="min-h-screen grid place-content-center bg-gradient-to-br from-stone-100 via-stone-300 to-stone-400 text-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:my-16 px-4 md:px-10 lg:px-32">
+        {images.map((image, index) => (
+          <div key={index}>
+            <Image
+              className="h-auto max-w-full rounded-lg"
+              src={image.src}
+              alt={image.alt}
+            />
+          </div>
+        ))}
       </div>
     </div>
   )
