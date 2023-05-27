@@ -17,7 +17,7 @@ export default function Gallery() {
   ]
   return (
     <div className="min-h-screen grid place-content-center bg-gradient-to-br from-stone-100 via-stone-300 to-stone-400 text-center">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:my-16 px-4 md:px-10 lg:px-32">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-4 md:px-10 lg:px-32 lg:my-16 xl:my-20">
         {images.map((image, index) => (
           <div key={index}>
             <Image

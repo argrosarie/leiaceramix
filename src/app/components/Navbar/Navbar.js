@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
+  const [currentPage, setCurrentPage] = useState('/')
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen)
@@ -23,8 +24,16 @@ const Navbar = () => {
     return menuItems.map((item, index) => (
       <button
         key={index}
-        onClick={() => router.push(item.path)}
-        className="text-gray-500 hover:text-gray-700"
+        onClick={() => {
+          router.push(item.path)
+          setCurrentPage(item.path)
+          setIsOpen(false)
+        }}
+        className={`text-gray-500 hover:text-gray-700 ${
+          currentPage === item.path
+            ? 'bg-slate-500 text-white hover:text-white'
+            : ''
+        } bg-slate-400/10 my-1 rounded-md p-1 bg-gray-200 md:px-2`}
       >
         {item.label}
       </button>
@@ -32,11 +41,17 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-base-100 fixed z-10 w-full bg-transparent/10">
-      <div className="flex items-center justify-between px-4 py-3">
+    <nav
+      className={`bg-base-100 fixed z-10 w-full ${
+        isOpen ? 'bg-transparent/50' : 'bg-transparent'
+      }`}
+    >
+      <div className="flex items-center justify-between px-4 py-3 md:pl-10 lg:pl-20">
         <button
           onClick={() => router.push('/')}
-          className="btn btn-ghost text-xl font-extralight "
+          className={`btn btn-ghost text-xl font-extralight md:text-2xl md:py-2${
+            isOpen ? 'text-white' : 'text-black '
+          }`}
         >
           Leia Ceramix
         </button>
@@ -50,13 +65,15 @@ const Navbar = () => {
             aria-expanded={isOpen}
           >
             {isOpen ? (
-              <FiX className="w-6 h-6" />
+              <FiX className="w-6 h-6 text-white" />
             ) : (
-              <FiMenu className="w-6 h-6" />
+              <FiMenu className="w-6 h-6 " />
             )}
           </button>
         </div>
-        <div className="hidden md:flex space-x-8 mx-6">{renderMenuItems()}</div>
+        <div className="hidden md:flex space-x-8 pr-10 lg:pr-20">
+          {renderMenuItems()}
+        </div>
       </div>
       {isOpen && (
         <div className="ml-4 pt-2 pb-4 md:hidden flex flex-col items-start text-lg ">
