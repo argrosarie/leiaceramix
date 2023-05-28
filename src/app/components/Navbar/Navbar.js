@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { useRouter } from 'next/navigation'
 
@@ -8,6 +8,29 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
   const [currentPage, setCurrentPage] = useState('/')
+  const [scrollY, setScrollY] = useState(0)
+  const [navbarBackground, setNavbarBackground] = useState('transparent')
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  useEffect(() => {
+    const shouldNavbarBeOpaque = scrollY > 0
+    setNavbarBackground(
+      shouldNavbarBeOpaque
+        ? 'bg-gradient-to-br from-stone-100 via-stone-300 to-stone-400'
+        : 'transparent',
+    )
+  }, [scrollY])
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen)
@@ -39,12 +62,10 @@ const Navbar = () => {
       </button>
     ))
   }
-
+  // isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
   return (
     <nav
-      className={`bg-base-100 fixed z-10 w-full ${
-        isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
-      }`}
+      className={`fixed z-10 w-full transition-colors duration-500 ${navbarBackground}`}
     >
       <div className="flex items-center justify-between px-4 py-3 md:pl-10 lg:pl-20">
         <button
