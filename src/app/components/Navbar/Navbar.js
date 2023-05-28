@@ -65,7 +65,10 @@ const Navbar = () => {
   // isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
   return (
     <nav
-      className={`fixed z-10 w-full transition-colors duration-500 ${navbarBackground}`}
+      // className={`fixed z-10 w-full transition-colors duration-500 ${navbarBackground}`}
+      className={`bg-base-100 fixed z-10 w-full ${
+        isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
+      } ${navbarBackground ? 'transition-colors duration-500' : ''} `}
     >
       <div className="flex items-center justify-between px-4 py-3 md:pl-10 lg:pl-20">
         <button
