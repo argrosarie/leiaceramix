@@ -27,8 +27,8 @@ export default function ModalComponent({ image, onClose }) {
             </svg>
           </button>
           <Image
-            src={image.src}
-            alt={image.alt}
+            src={image?.src}
+            alt={image?.alt}
             className="max-w-full h-auto rounded-lg"
             width={500}
             height={500}
