@@ -6,7 +6,7 @@ export default function About() {
       <h1 className="uppercase text-slate-900 font-bold text-2xl md:text-3xl">
         About Leia
       </h1>
-      <section className="text-left space-y-4 px-6 md:px-14 md:text-justify lg:px-36 lg:min-h-screen">
+      <section className="text-left pb-8 space-y-4 px-6 md:px-14 md:text-justify lg:px-36 lg:min-h-screen">
         <p>
           Leia Green, a queer artist and the creative force behind Leia Ceramix,
           hails from the city of Nashville, Tennessee, USA, but has now found
