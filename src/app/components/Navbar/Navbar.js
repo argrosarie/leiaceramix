@@ -66,7 +66,7 @@ const Navbar = () => {
   return (
     <nav
       // className={`fixed z-10 w-full transition-colors duration-500 ${navbarBackground}`}
-      className={`bg-base-100 fixed z-10 w-full ${
+      className={`bg-stone-300 fixed z-10 w-full ${
         isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
       } ${navbarBackground ? 'transition-colors duration-500' : ''} `}
     >
