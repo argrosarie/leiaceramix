@@ -7,8 +7,8 @@ import Instagram from '../../public/assets/icons/instagram.png'
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gradient-to-br from-stone-100 via-stone-300 to-stone-400 space-y-8 md:space-x-20">
-        <section className="mt-10">
+      <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gradient-to-br from-stone-100 via-stone-300 to-stone-400 space-y-8 md:space-x-20 py-20">
+        <section className="">
           <div className="">
             <Image
               src={Profile}

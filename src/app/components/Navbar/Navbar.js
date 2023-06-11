@@ -70,7 +70,7 @@ const Navbar = () => {
         isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
       } ${navbarBackground ? 'transition-colors duration-500' : ''} `}
     >
-      <div className="flex items-center justify-between px-4 py-3 md:pl-10 lg:pl-20">
+      <div className="flex items-center justify-between px-4 pt-2 md:pl-10 lg:pl-20">
         <button
           onClick={() => router.push('/')}
           className={`btn btn-ghost text-xl font-extralight md:text-2xl md:py-2${
