@@ -1,4 +1,4 @@
-import React from 'react'
+import Rosario from '../components/Background/page'
 
 export default function About() {
   return (
@@ -49,6 +49,7 @@ export default function About() {
           daily moments of pure joy.
         </p>
       </section>
+      <Rosario />
     </div>
   )
 }
