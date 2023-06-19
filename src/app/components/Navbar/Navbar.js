@@ -62,18 +62,13 @@ const Navbar = () => {
       </button>
     ))
   }
-  // isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
+
   return (
-    <nav
-      // className={`fixed z-10 w-full transition-colors duration-500 ${navbarBackground}`}
-      className={`bg-stone-300 fixed z-10 w-full ${
-        isOpen ? 'bg-transparent/50' : 'bg-transparent h-14'
-      } ${navbarBackground ? 'transition-colors duration-500' : ''} `}
-    >
-      <div className="flex items-center justify-between px-4 pt-2 md:pl-10 lg:pl-20">
+    <nav className={`bg-stone-300 fixed z-10 w-full `}>
+      <div className="flex items-center justify-between h-14 px-4  md:pl-10 lg:pl-20">
         <button
           onClick={() => router.push('/')}
-          className={`btn btn-ghost text-xl font-extralight md:text-2xl md:py-2${
+          className={`btn btn-ghost text-2xl font-extralight md:text-2xl md:py-2${
             isOpen ? 'text-white' : 'text-black '
           }`}
         >
@@ -100,7 +95,7 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="ml-4 pt-2 pb-4 md:hidden flex flex-col items-start text-lg ">
+        <div className="ml-4 space-y-3 pb-3 md:hidden flex flex-col items-start text-lg ">
           {renderMenuItems()}
         </div>
       )}
